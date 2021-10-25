@@ -30,20 +30,21 @@ $font-bold:700;
     --body-font:'Roboto', sans-serif;
 
     --biggest-font-size: 1.5rem;
+    --big-font-size:1.5rem;
     --normal-font-size:0.938rem;
     --smaller-font-size:0.75rem;
 
     @media screen and (min-width:968px){
         --biggest-font-size: 3.25rem;
         --big-font-size:2.25rem;
-        --normal-font-size: 2.25rem;
+        --normal-font-size: 1rem;
         --smaller-font-size: 0.813rem;
     } 
 }
 
 /*-------- z-index -----------*/ 
 :root{
-    --z-back:10;
+    --z-back:-10;
     --z-normal:1;
     --z-tooltip:10;
     --z-fixed:100;
@@ -51,7 +52,7 @@ $font-bold:700;
 }
 
 /*----------BASE---------*/
-*, ::before,::after{
+*,::before,::after{
     box-sizing: border-box;
 } 
 
@@ -157,7 +158,7 @@ a{
         height: 240px;
         background-color: var(--primary);
         border-radius: 50%;
-        transition: .5s;
+        transition:.5s;
     }
     &__img{
         width: 313px;
@@ -209,6 +210,7 @@ a{
 
     &__subtitle{
         font-size: var(--normal-font-size);
+        font-weight: $font-medium;
     }
     &__title{
         font-size: var(--biggest-font-size);
@@ -219,12 +221,13 @@ a{
     }
 }
 
-/*----------------SIZE---------------*/ 
+
 .actions{
     display: flex;
     justify-content: space-between;
 }
 
+/*----------------SIZE---------------*/ 
 .size{
     &__title{
         font-size: var(--normal-font-size);
@@ -244,6 +247,7 @@ a{
         line-height: 30px;
         border-radius:.25rem;
         cursor: pointer;
+        transition:.5s;
     }
 
     &__tallas.active{
@@ -268,6 +272,7 @@ a{
         color: var(--white-color);
         padding: .5rem;
         border-radius:.25rem;
+        transition:.5s;
     }
 
 }
@@ -281,7 +286,7 @@ a{
     height: 83px;
     background-color: var(--white-color);
     border-radius: 1.5rem 1.5rem 0 0;
-    box-shadow: 0 0 20px rgba(17 , 17 , 17, 0.25);
+    box-shadow: 0px 0px 20px rgba(17 , 17 , 17, 0.25);
     display: flex;
     justify-content: space-evenly;
     align-items: center;
@@ -296,8 +301,117 @@ a{
         color: var(--white-color);
         padding: 1.25rem 3.125rem;
         border-radius: .5rem;
+        transition:.5s;
     }
 }
+
+/*----------------MEDIA QUERIES---------------*/ 
+@media screen and (min-width:968px){
+    body{
+        margin: 0;
+    }
+
+    .nav{
+        height:$header-height + 1rem;
+
+        &__list{
+            display: flex;
+        }
+
+        &__item{
+            margin-right: 3rem;
+            margin-bottom:0;
+        }
+
+        &__toggle{
+            display: none;
+        }
+    }
+
+
+    .home{
+        height: 100vh;
+        grid-template-columns: max-content max-content;
+        grid-template-rows: max-content;
+        align-content:center;
+        justify-content: center;
+        column-gap: 6rem;
+        
+    }
+    
+    .sneaker{
+        &__figure{
+            width: 430px;
+            height: 430px;
+        }
+        &__img{
+            width: 550px;
+            top: 13%;
+            left: -6%;
+        }
+        &__colors{
+            right: initial;
+            bottom: 0;
+            & span{
+                display: inline-block;
+            }
+        }
+    }
+    
+    .info{
+        align-self: center;
+    }
+
+    .data{
+        margin-bottom: 2.5rem;
+
+        &__subtitle{
+            font-size:1.5rem;
+        }
+
+        &__title{
+            margin-bottom: 1rem;
+        }
+    }
+
+    .size{
+        margin-bottom: 2.5rem;
+
+        &__tallas{
+            width: 34px;
+            height: 34px;
+            line-height: 35px;
+        }
+    }
+
+    .preci{
+        position: initial;
+        background-color: initial;
+        justify-content: space-between;
+        box-shadow: none;
+
+        &__title{
+            color: var(--black-color);
+            font-weight: $font-medium;
+        }
+    }
+
+}
+
+
+@media screen and (min-width:1200px){
+
+    .bd-grid{
+        margin-left: auto;
+        margin-right: auto;
+    }
+
+
+}
+
+
+
+
 
 
 
