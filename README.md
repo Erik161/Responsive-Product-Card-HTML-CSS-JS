@@ -10,3 +10,4 @@ Responsive Product Card Landing Page HTML SCSS JAVASCRIPT | Mobile First
 
 ![ShopAnimation2](https://user-images.githubusercontent.com/26189854/159368721-08b552f3-3cc9-4b57-9e70-d232a4da21e1.gif)
 
+
